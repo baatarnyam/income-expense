@@ -1,0 +1,39 @@
+[
+  {
+    "username": "asd",
+    "email": "batEmail",
+    "password": "asdasd",
+    "followers": "200",
+    "following": "103",
+    "img": "basdfIMG"
+  },
+  {
+    "username": "asd",
+    "email": "asdEmail",
+    "password": "asdasd",
+    "followers": "200",
+    "following": "103",
+    "img": "basdfIMG"
+  },
+  {
+    "username": "bn",
+    "email": "bnEmail",
+    "password": "$2b$04$95nGK6rkuA6ha/Weoo4aeOVQdvbm82l3pTvZWu8j3BI1QfPWnMLFW",
+    "followers": "123",
+    "following": "1231",
+    "img": "img"
+  },
+  {
+    "username": "bb",
+    "email": "bbEmail",
+    "password": "$2b$04$bJmJmxbrZyMzW/s.cxZkLuIcbUKOxq7Y5buXbxd5DQGZOoE6eJs76",
+    "followers": "12asdf3",
+    "following": "12asdf31",
+    "img": "img"
+  },
+  {
+    "username": "asd",
+    "email": "asdasd",
+    "password": "$2b$04$uRzcM2LpgmozwjV1A3N/BODCvsAgq5sTSh274AUBxjB4YJB7vj.VC"
+  }
+]
