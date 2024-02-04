@@ -1,39 +1,13 @@
 [
-  {
-    "username": "asd",
-    "email": "batEmail",
-    "password": "asdasd",
-    "followers": "200",
-    "following": "103",
-    "img": "basdfIMG"
-  },
-  {
-    "username": "asd",
-    "email": "asdEmail",
-    "password": "asdasd",
-    "followers": "200",
-    "following": "103",
-    "img": "basdfIMG"
-  },
+  { "username": "asd", "email": "asdEmail", "password": "asdasd" },
   {
     "username": "bn",
     "email": "bnEmail",
-    "password": "$2b$04$95nGK6rkuA6ha/Weoo4aeOVQdvbm82l3pTvZWu8j3BI1QfPWnMLFW",
-    "followers": "123",
-    "following": "1231",
-    "img": "img"
+    "password": "$2b$04$3NhPS62NS1FXnWP2Qwu04OKe/1n9s2q5QfXt1xWOjub65nyK/y6hm"
   },
   {
-    "username": "bb",
-    "email": "bbEmail",
-    "password": "$2b$04$bJmJmxbrZyMzW/s.cxZkLuIcbUKOxq7Y5buXbxd5DQGZOoE6eJs76",
-    "followers": "12asdf3",
-    "following": "12asdf31",
-    "img": "img"
-  },
-  {
-    "username": "asd",
-    "email": "asdasd",
-    "password": "$2b$04$uRzcM2LpgmozwjV1A3N/BODCvsAgq5sTSh274AUBxjB4YJB7vj.VC"
+    "username": "hihi",
+    "email": "hihihi",
+    "password": "$2b$04$z2qUNbYG10NaxvgncBkL7uZZgN4eb0vn.lO3NQnLrpMRdkdPNxScO"
   }
 ]

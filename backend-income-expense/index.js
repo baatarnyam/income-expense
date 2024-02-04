@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(userRouter);
-const port = 7000;
+const port = 8000;
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
