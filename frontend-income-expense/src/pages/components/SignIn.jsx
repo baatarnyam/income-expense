@@ -18,13 +18,13 @@ const SignIn = () => {
     });
   };
 
-  const loginClickHandler = (e) => {
+  const ClickedButton = async (e) => {
     e.preventDefault();
     try {
-      axios.post("http://localhost:7000", userData).then((res) => {
+      await axios.post("http://localhost:8000/login", userData).then((res) => {
         console.log(res.data);
         if (res.data !== "Invalid email or password") {
-          push("/");
+          // push("/");
         } else {
           alert(res.data);
         }
@@ -37,7 +37,7 @@ const SignIn = () => {
   return (
     <div className="w-full h-full flex ">
       <div className="w-1/2 h-full flex items-center justify-center">
-        <div className="w-96 h-2/5 flex flex-col items-center justify-between">
+        <div className="w-96 h-[360px] flex flex-col items-center justify-between">
           <div className="w-24 h-9 flex items-center justify-around">
             <div>
               <Image src="/logo.png" width={24} height={24} />
@@ -45,7 +45,7 @@ const SignIn = () => {
             <h1 className="text-2xl font-bold">Geld</h1>
           </div>
 
-          <div className="w-72 h-16 flex flex-col items-center justify-between ">
+          <div className="w-72 h-16 flex flex-col items-center justify-between">
             <h1 className="text-2xl font-semibold">Welcome Back</h1>
             <h1 className="text-sm font-normal">
               Welcome back, Please enter your details
@@ -63,17 +63,10 @@ const SignIn = () => {
               placeholder="Password"
               type="password"
               handleChange={handleChange}
-              name="password}"
+              name="password"
             />
 
-            <Button name="Log in" loginClickHandler={loginClickHandler} />
-          </div>
-
-          <div className="w-56 h-8 flex justify-around items-center ">
-            <p className="text-sm font-normal">Don’t have account?</p>
-            <button className="text-sm font-normal text-blue-600">
-              Sign up
-            </button>
+            <Button innerText="Log in" ClickedButton={ClickedButton} />
           </div>
         </div>
       </div>
