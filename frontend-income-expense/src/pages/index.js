@@ -1,5 +1,5 @@
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
 import { useState } from "react";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     <div className="w-screen h-screen flex relative">
       {clicked ? <SignUp /> : <SignIn />}
 
-      <div className="w-56 h-8 flex justify-around items-center absolute left-[260px] bottom-[50px]">
+      <div className="w-56 h-8 flex justify-around items-center absolute left-[400px] bottom-1/4">
         <p className="text-sm font-normal">
           {clicked ? "Already have account?" : "Don’t have account?"}
         </p>

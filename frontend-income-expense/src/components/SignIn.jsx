@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 const SignIn = () => {
   const [userData, setUserData] = useState({});
-  const { push } = useRouter;
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,18 +20,20 @@ const SignIn = () => {
 
   const ClickedButton = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:8000/login", userData).then((res) => {
-        console.log(res.data);
-        if (res.data !== "Invalid email or password") {
-          // push("/");
+
+    await axios
+      .post("http://localhost:8000/login", userData)
+      .then((response) => {
+        console.log(response.data);
+        if (
+          response.data !== "User not found" &&
+          response.data !== "Email or password is wrong"
+        ) {
+          router.push("/home");
         } else {
-          alert(res.data);
+          alert(response.data);
         }
       });
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   return (
@@ -51,23 +53,24 @@ const SignIn = () => {
               Welcome back, Please enter your details
             </h1>
           </div>
+          <form onSubmit={ClickedButton} action="">
+            <div className="w-fit h-48 flex flex-col justify-between">
+              <Input
+                placeholder="Email"
+                type="text"
+                handleChange={handleChange}
+                name="email"
+              />
+              <Input
+                placeholder="Password"
+                type="password"
+                handleChange={handleChange}
+                name="password"
+              />
 
-          <div className="w-fit h-48 flex flex-col justify-between">
-            <Input
-              placeholder="Email"
-              type="text"
-              handleChange={handleChange}
-              name="email"
-            />
-            <Input
-              placeholder="Password"
-              type="password"
-              handleChange={handleChange}
-              name="password"
-            />
-
-            <Button innerText="Log in" ClickedButton={ClickedButton} />
-          </div>
+              <Button innerText="Log in" type="submit" />
+            </div>
+          </form>
         </div>
       </div>
       <div className="w-1/2 h-full bg-blue-600"></div>

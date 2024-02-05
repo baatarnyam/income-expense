@@ -2,9 +2,10 @@ import { all } from "axios";
 import { constants } from "buffer";
 import fs from "fs";
 import { compareHash } from "../utils/passwordHash.js";
-// const userDb = "/Users/23LP2888/blog/router/models/users.json";
 const userDb =
-  "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json";
+  "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
+// const userDb =
+//   "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json";
 
 export const postRequest = async (req, res, next) => {
   try {
@@ -14,7 +15,7 @@ export const postRequest = async (req, res, next) => {
 
     const checkedUser = allUsersJson.find(({ email }) => email === userEmail);
     if (!checkedUser) {
-      res.send("Email or Password is empty");
+      res.send("User not found");
       return;
     }
 
@@ -24,9 +25,9 @@ export const postRequest = async (req, res, next) => {
       next();
       return;
     } else {
-      res.status(401).send(" Email or password is wrong");
+      res.send("Email or password is wrong");
     }
   } catch (error) {
-    res.status(500).send(error.message);
+    res.send(error.message);
   }
 };

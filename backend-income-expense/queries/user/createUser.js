@@ -1,22 +1,11 @@
 import fs from "fs";
 import { makeHash } from "../../utils/passwordHash.js";
+import { error } from "console";
 
-// const readFile = async () => {
-//   try {
-//     const oldUsers = await fs.readFileSync(
-//       // "/Users/23LP2888/blog/router/models/users.json",
-
-//       "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json",
-//       "utf8"
-//     );
-//     return oldUsers;
-//   } catch (err) {
-//     return null;
-//   }
-// };
+// const userDb =
+//   "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json";
 const userDb =
-  "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json";
-// const userDb = "/Users/23LP2888/blog/router/models/users.json",
+  "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
 
 export const createByNewUser = async (req, res) => {
   const { username, email, password } = req.body;
@@ -32,9 +21,8 @@ export const createByNewUser = async (req, res) => {
     const allUsers = JSON.parse(allUsersJson);
 
     const isUserExisted = allUsers.find((el) => el.email === email);
-
     if (isUserExisted) {
-      throw new Error("user already existed");
+      throw new Error("User already existed");
     }
 
     allUsers.push({
@@ -44,8 +32,8 @@ export const createByNewUser = async (req, res) => {
     });
 
     await fs.writeFileSync(
-      // "/Users/23LP2888/blog/router/models/users.json",
-      "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json",
+      "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
+      // "C:/Users/Dell/OneDrive/Desktop/income-expense/backend-income-expense/models/users.json",
       JSON.stringify(allUsers)
     );
 

@@ -12,8 +12,10 @@
     "axios": "^1.6.7",
     "cors": "^2.8.5",
     "next": "^14.1.0",
+    "push": "^0.1.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "router": "^1.3.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

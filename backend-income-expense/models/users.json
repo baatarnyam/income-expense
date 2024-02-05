@@ -1,13 +1,27 @@
 [
-  { "username": "asd", "email": "asdEmail", "password": "asdasd" },
   {
     "username": "bn",
     "email": "bnEmail",
     "password": "$2b$04$3NhPS62NS1FXnWP2Qwu04OKe/1n9s2q5QfXt1xWOjub65nyK/y6hm"
   },
   {
-    "username": "hihi",
-    "email": "hihihi",
-    "password": "$2b$04$z2qUNbYG10NaxvgncBkL7uZZgN4eb0vn.lO3NQnLrpMRdkdPNxScO"
+    "username": "hi",
+    "email": "hiEmail",
+    "password": "$2b$04$hjfR.ULR65XIZnc1wjdFPOtpIDKsfrdkgWINwkS3JPZczutWxLadm"
+  },
+  {
+    "username": "bnbn",
+    "email": "bbaatarnya@gmail.com",
+    "password": "$2b$04$x0GQAYt4j9VXLNpmCK0Z2.4HH7An8IMeD34MNvkcpWW9SzNLH3ePK"
+  },
+  {
+    "username": "haha",
+    "email": "hello@gmail.com",
+    "password": "$2b$04$yQPVO1c4mxXNx1ZgDVgQped2sDOMVeYwxJZw1KO8QNUn2zdPk2uSG"
+  },
+  {
+    "username": "zxc",
+    "email": "asd@gmail.com",
+    "password": "$2b$04$bgGKWcnzkOlPFTrfNMdAgenqRrTmXKECIrRMQ20t1BMgV.1Npv/YW"
   }
 ]
