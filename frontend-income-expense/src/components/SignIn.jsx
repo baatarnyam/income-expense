@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 
 const SignIn = () => {
   const [userData, setUserData] = useState({});
+  const [error, setError] = useState("");
+
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -21,19 +23,30 @@ const SignIn = () => {
   const ClickedButton = async (e) => {
     e.preventDefault();
 
+    // try {
     await axios
       .post("http://localhost:8000/login", userData)
       .then((response) => {
         console.log(response.data);
+
+        const setItem = () => {
+          localStorage.setItem("loginToken", response.data.accessToken);
+        };
+        setItem();
+
         if (
           response.data !== "User not found" &&
           response.data !== "Email or password is wrong"
         ) {
           router.push("/home");
         } else {
-          alert(response.data);
+          setError(response.data);
         }
       });
+    // } catch (error) {
+    //   // alert(error.response.data);
+    //   setError(error.response.data);
+    // }
   };
 
   return (
@@ -67,6 +80,7 @@ const SignIn = () => {
                 handleChange={handleChange}
                 name="password"
               />
+              {error && <div className="text-red-500 text-[12px]">{error}</div>}
 
               <Button innerText="Log in" type="submit" />
             </div>

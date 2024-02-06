@@ -2,6 +2,8 @@ import { all } from "axios";
 import { constants } from "buffer";
 import fs from "fs";
 import { compareHash } from "../utils/passwordHash.js";
+import jwt from "jsonwebtoken";
+
 const userDb =
   "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
 // const userDb =
@@ -20,6 +22,12 @@ export const postRequest = async (req, res, next) => {
     }
 
     const checkedHash = compareHash(password, checkedUser.password);
+
+    // const accessToken = jwt.sign(
+    //   { email: checkedUser.email },
+    //   process.env.JWT_SECRET || "defaultSecret",
+    //   { expiresIn: "1d" }
+    // );
 
     if (checkedHash) {
       next();

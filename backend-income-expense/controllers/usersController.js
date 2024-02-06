@@ -10,6 +10,7 @@ import { getUserByDelete } from "../queries/user/deleteUser.js";
 import { createByNewUser } from "../queries/user/createUser.js";
 import { updateByUser } from "../queries/user/updateUser.js";
 import { postRequest } from "../middleWare/login.js";
+import jwt from "jsonwebtoken";
 
 export const getUserByEmailService = async (req, res) => {
   try {
@@ -59,8 +60,15 @@ export const updateByUserService = async (req, res) => {
 
 export const postRequestService = async (req, res) => {
   try {
+    const accessToken = jwt.sign(
+      { email: req.body.email },
+      process.env.JWT_SECRET || "defaultSecret",
+      { expiresIn: "1d" }
+    );
+
     const requestUser = await getUserByEmail(req);
-    res.send(requestUser);
+
+    res.send({ ...requestUser, accessToken });
   } catch (error) {
     res.status(500).send(error.message);
   }

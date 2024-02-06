@@ -12,8 +12,8 @@ export default function Home() {
     <div className="w-screen h-screen flex relative">
       {clicked ? <SignUp /> : <SignIn />}
 
-      <div className="w-56 h-8 flex justify-around items-center absolute left-[400px] bottom-1/4">
-        <p className="text-sm font-normal">
+      <div className="w-56 h-8 flex justify-around items-center absolute left-[420px] bottom-1/4">
+        <p className="text-sm font-normal  mx-auto">
           {clicked ? "Already have account?" : "Don’t have account?"}
         </p>
         <button

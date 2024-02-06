@@ -7,6 +7,7 @@ import { createUserService } from "../controllers/usersController.js";
 import { updateByUserService } from "../controllers/usersController.js";
 import { postRequestService } from "../controllers/usersController.js";
 import { postRequest } from "../middleWare/login.js";
+import { tokenCheck } from "../middleWare/tokenCkeck.js";
 
 const userRouter = express.Router();
 
@@ -27,5 +28,8 @@ userRouter.put("/users/:email", updateByUserService);
 
 //delete
 userRouter.delete("/users/:email", getUserByDeleteService);
+
+//token check
+userRouter.post("/token", tokenCheck);
 
 export default userRouter;
