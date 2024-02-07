@@ -1,1 +1,17 @@
-[{"username":"bn","email":"bnEmail","password":"$2b$04$3NhPS62NS1FXnWP2Qwu04OKe/1n9s2q5QfXt1xWOjub65nyK/y6hm"},{"username":"bnbn","email":"bbaatarnya@gmail.com","password":"$2b$04$x0GQAYt4j9VXLNpmCK0Z2.4HH7An8IMeD34MNvkcpWW9SzNLH3ePK"},{"username":"haha","email":"hello@gmail.com","password":"$2b$04$yQPVO1c4mxXNx1ZgDVgQped2sDOMVeYwxJZw1KO8QNUn2zdPk2uSG"},{"username":"zxc","email":"asd@gmail.com","password":"$2b$04$bgGKWcnzkOlPFTrfNMdAgenqRrTmXKECIrRMQ20t1BMgV.1Npv/YW"},{"username":"ada","email":"ADads@gmail.com","password":"$2b$04$6ZF8/9EZg1gAO3g1ePUwpuY1Be2XUNH3NutbxvdRTq0WAP9QNO2aC"},{"username":"hi","email":"hi@gmail.com","password":"$2b$04$5RxSQmgi3onn1sPqQTvpDe5jRPGoqSZJmSmrz2bc/phwpzGmaCHhC"}]
+[
+  {
+    "username": "haha",
+    "email": "hello@gmail.com",
+    "password": "$2b$04$yQPVO1c4mxXNx1ZgDVgQped2sDOMVeYwxJZw1KO8QNUn2zdPk2uSG"
+  },
+  {
+    "username": "hi",
+    "email": "hi@gmail.com",
+    "password": "$2b$04$5RxSQmgi3onn1sPqQTvpDe5jRPGoqSZJmSmrz2bc/phwpzGmaCHhC"
+  },
+  {
+    "username": "asd",
+    "email": "asd@gmail.com",
+    "password": "$2b$04$m6XYRfQVIY8Ed.dN0cZK/.PU7zRhqsJLLOY2eHdEyP74o3WJX03Qy"
+  }
+]

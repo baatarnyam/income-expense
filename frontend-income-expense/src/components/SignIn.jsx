@@ -4,6 +4,7 @@ import Button from "./Button";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const SignIn = () => {
   const [userData, setUserData] = useState({});
@@ -38,7 +39,7 @@ const SignIn = () => {
           response.data !== "User not found" &&
           response.data !== "Email or password is wrong"
         ) {
-          router.push("/home");
+          router.push("/currency");
         } else {
           setError(response.data);
         }
@@ -50,7 +51,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="w-full h-full flex ">
+    <div className="w-screen h-screen flex ">
       <div className="w-1/2 h-full flex items-center justify-center">
         <div className="w-96 h-[360px] flex flex-col items-center justify-between">
           <div className="w-24 h-9 flex items-center justify-around">
@@ -85,6 +86,15 @@ const SignIn = () => {
               <Button innerText="Log in" type="submit" />
             </div>
           </form>
+
+          <div className="w-56 h-8 flex justify-around items-center mt-5 ">
+            <p className="text-sm font-normal  mx-auto">Don’t have account?</p>
+            <Link href={`/signUp`}>
+              <button className="text-sm font-normal text-blue-600">
+                Sign up
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="w-1/2 h-full bg-blue-600"></div>

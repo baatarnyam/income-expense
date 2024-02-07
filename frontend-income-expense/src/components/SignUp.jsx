@@ -35,7 +35,7 @@ const SignUp = () => {
           // console.log(response.data);
 
           if (response.data !== "User already existed") {
-            router.push("/login");
+            router.push("/home");
           }
         });
     } catch (error) {
@@ -46,7 +46,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="w-full h-full flex ">
+    <div className="w-screen h-screen flex ">
       <div className="w-1/2 h-full flex items-center justify-center">
         <div className="w-96 h-fit flex flex-col items-center gap-[15px]">
           <div className="w-24 h-9 flex items-center justify-around">
@@ -102,19 +102,16 @@ const SignUp = () => {
             </div>
           </form>
 
-          {/* <div className="w-56 h-8 flex justify-around items-center absolute bottom-1/4">
+          <div className="w-56 h-8 flex justify-around items-center mt-5">
             <p className="text-sm font-normal  mx-auto">
               Already have account?
             </p>
-            <Link>
-              <button
-                className="text-sm font-normal text-blue-600"
-                onClick={clickedSignUp}
-              >
+            <Link href={`/login`}>
+              <button className="text-sm font-normal text-blue-600">
                 Sign in
               </button>
-            </Link> 
-          </div> */}
+            </Link>
+          </div>
         </div>
       </div>
       <div className="w-1/2 h-full bg-blue-600"></div>

@@ -3,7 +3,7 @@ const Button = (props) => {
   return (
     <div>
       <button
-        className="w-96 h-12 bg-blue-600 rounded-3xl text-white text-xl"
+        className="w-96 h-12 bg-blue-600 rounded-2xl text-white text-xl"
         onClick={ClickedButton}
       >
         {innerText}
