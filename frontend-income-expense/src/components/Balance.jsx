@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Button from "./Button";
-import Link from "next/link";
-const Currency = () => {
+import Input from "./Input";
+
+const Balance = () => {
   return (
     <div className="w-screen h-screen flex flex-col items-center pt-10">
       <div className="w-96 h-1/2 flex flex-col items-center justify-between ">
@@ -15,34 +16,33 @@ const Currency = () => {
 
           <ul className="steps">
             <li className="step step-info">Currency</li>
-            <li className="step">Balance </li>
+            <li className="step step-info">Balance </li>
             <li className="step">Finish</li>
           </ul>
         </div>
 
         <div className="w-96 h-72 flex flex-col items-center justify-between">
-          <Image src="/currency.png" width={48} height={48} />
+          <Image src="/balance.png" width={48} height={48} />
           <div className="text-2xl font-semibold text-slate-900">
-            Select base currency
+            Set up your cash Balance
           </div>
 
-          <select className="select select-bordered w-96 max-w-xs h-12 rounded-md bg-gray-100 px-2 ">
-            <option disabled selected>
-              MNT-Mongolian Tugrik
-            </option>
-            <option>Han Solo</option>
-          </select>
+          {/* <input
+            type="text"
+            className="w-96 max-w-xs h-12 rounded-md bg-gray-100"
+          /> */}
+          <Input
+            className="w-96 max-w-xs h-12 rounded-md bg-gray-100"
+            placeholder="Email"
+          />
 
           <div className="text-xs font-normal text-slate-600">
-            Your base currency should be the one you use most often. All
-            transaction in other currencies will be calculated based on this one{" "}
+            How much cash do you have in your wallet?
           </div>
-          <Link href={`/balance`}>
-            <Button innerText="Confirm" />
-          </Link>
+          <Button innerText="Confirm" />
         </div>
       </div>
     </div>
   );
 };
-export default Currency;
+export default Balance;
