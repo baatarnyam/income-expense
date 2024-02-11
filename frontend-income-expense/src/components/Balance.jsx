@@ -33,6 +33,7 @@ const Balance = () => {
           /> */}
           <Input
             className="w-96 max-w-xs h-12 rounded-md bg-gray-100"
+            type="email"
             placeholder="Email"
           />
 

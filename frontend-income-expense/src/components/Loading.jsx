@@ -29,7 +29,6 @@ const Loading = () => {
           </svg>
           <span class="sr-only">Loading...</span>
         </div>
-
         <div>Түр хүлээнэ үү...</div>
       </div>
     </div>

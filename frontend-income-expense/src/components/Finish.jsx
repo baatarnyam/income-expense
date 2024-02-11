@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import Input from "./Input";
+import Link from "next/link";
 
 const Finish = () => {
   return (
@@ -31,7 +32,9 @@ const Finish = () => {
             Your very first account has been created. Now continue to dashboard
             and start tracking
           </div>
-          <Button innerText="Go to Dashboard" />
+          <Link href={`/dashboard`}>
+            <Button innerText="Go to Dashboard" />
+          </Link>
         </div>
       </div>
     </div>

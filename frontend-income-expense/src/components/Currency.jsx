@@ -4,7 +4,7 @@ import Link from "next/link";
 const Currency = () => {
   return (
     <div className="w-screen h-screen flex flex-col items-center pt-10">
-      <div className="w-96 h-1/2 flex flex-col items-center justify-between ">
+      <div className="w-96 h-1/2 flex flex-col items-center justify-between">
         <div className="w-full h-fit flex flex-col items-center gap-20">
           <div className="w-fit h-fit flex items-center gap-3">
             <div>

@@ -24,7 +24,7 @@ const SignUp = () => {
   const ClickedButton = async (e) => {
     e.preventDefault();
     if (userData.password !== userData.RePassword) {
-      setError("Password and Re-Password ...");
+      setError("Password and Re-Password does not match");
       return;
     }
 
@@ -35,7 +35,7 @@ const SignUp = () => {
           // console.log(response.data);
 
           if (response.data !== "User already existed") {
-            router.push("/home");
+            router.push("/loading");
           }
         });
     } catch (error) {

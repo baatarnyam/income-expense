@@ -39,7 +39,7 @@ const SignIn = () => {
           response.data !== "User not found" &&
           response.data !== "Email or password is wrong"
         ) {
-          router.push("/currency");
+          router.push("/loading");
         } else {
           setError(response.data);
         }
