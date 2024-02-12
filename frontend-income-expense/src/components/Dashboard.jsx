@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { PiPlus } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
+import DashboardCharts from "./DashboardCharts";
 
 const Dashboard = () => {
   return (
@@ -59,6 +60,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <DashboardCharts />
     </div>
   );
 };
