@@ -2,10 +2,11 @@ import Image from "next/image";
 import { PiPlus } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
 import DashboardCharts from "./DashboardCharts";
+import LastRecords from "./LastRecords";
 
 const Dashboard = () => {
   return (
-    <div className="w-screen h-screen flex flex-col items-center bg-gray-100">
+    <div className="w-screen h-fit flex flex-col items-center bg-gray-100">
       <div className="w-[1440px] h-[72px] flex items-center justify-between bg-white rounded-lg mt-2">
         <div className="w-56 h-10 flex items-center gap-6">
           <Image src="/logo.png" width={40} height={40} />
@@ -61,6 +62,7 @@ const Dashboard = () => {
         </div>
       </div>
       <DashboardCharts />
+      <LastRecords />
     </div>
   );
 };

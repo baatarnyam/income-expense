@@ -40,8 +40,6 @@ const SignUp = () => {
         });
     } catch (error) {
       setError(error.response.data);
-      // setError(...error, err);
-      // console.log(err);
     }
   };
 

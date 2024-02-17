@@ -1,9 +1,3 @@
-// create user
-// update user
-// get users
-// get user
-// delete user
-
 import { getUserByEmail } from "../queries/user/getUser.js";
 import { getAllUsers } from "../queries/user/getUsers.js";
 import { getUserByDelete } from "../queries/user/deleteUser.js";
