@@ -4,8 +4,8 @@ import fs, { writeFileSync } from "fs";
 const readFile = async () => {
   try {
     const oldUsers = await fs.readFileSync(
-      "C:/Users/Dell/OneDrive/Desktop/router/models/users.json",
-      // "/Users/23LP2888/blog/router/models/users.json",
+      // "C:/Users/Dell/OneDrive/Desktop/router/models/users.json",
+      "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
       "utf8"
     );
     return oldUsers;
@@ -36,8 +36,8 @@ export const updateByUser = async (request, result) => {
   updateUser.img = updatedImg;
 
   await fs.writeFileSync(
-    "C:/Users/Dell/OneDrive/Desktop/router/models/users.json",
-    // "/Users/23LP2888/blog/router/models/users.json",
+    // "C:/Users/Dell/OneDrive/Desktop/router/models/users.json",
+    "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
     JSON.stringify(users)
   );
   return "Updated successfully";

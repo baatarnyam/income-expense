@@ -1,9 +1,9 @@
 import fs from "fs";
 
-const userDb =
-  "C:/Users/Dell/income-expense/backend-income-expense/models/users.json";
 // const userDb =
-// "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
+// "C:/Users/Dell/income-expense/backend-income-expense/models/users.json";
+const userDb =
+  "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
 
 export const getUserByDelete = async (request, response) => {
   try {
@@ -14,8 +14,8 @@ export const getUserByDelete = async (request, response) => {
 
     const oderUser = allUsers.filter(({ email }) => email !== paramEmail);
     await fs.writeFileSync(
-      // "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
-      "C:/Users/Dell/income-expense/backend-income-expense/models/users.json",
+      "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
+      // "C:/Users/Dell/income-expense/backend-income-expense/models/users.json",
       JSON.stringify(oderUser)
     );
 

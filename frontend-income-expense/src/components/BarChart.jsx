@@ -4,7 +4,7 @@ import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  // BarElement,
   Title,
   Tooltip,
   Legend,
@@ -13,7 +13,7 @@ import {
 ChartJS.register(
   CategoryScale,
   LinearScale,
-  BarElement,
+  // BarElement,
   Title,
   Tooltip,
   Legend
@@ -31,10 +31,16 @@ const BarChart = () => {
       labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan"],
       datasets: [
         {
-          label: "income-expense",
+          // label: "income-expense",
           data: [345345, 1000000, 2000000, 3000000, 456456, 325324, 456454],
-          borderColor: "rgb(38, 163, 0)",
-          backgroundColor: "rgb(38, 163, 0, 0.4)",
+          borderColor: "rgba(132, 204, 22, 1)",
+          backgroundColor: "rgba(132, 204, 22, 1)",
+        },
+        {
+          // label: "income-expense",
+          data: [345345, 1000000, 2000000, 3000000, 456456, 325324, 456454],
+          borderColor: "rgba(249, 115, 22, 1)",
+          backgroundColor: "rgba(249, 115, 22, 1)",
         },
       ],
     });

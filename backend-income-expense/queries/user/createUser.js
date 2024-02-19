@@ -2,10 +2,10 @@ import fs from "fs";
 import { makeHash } from "../../utils/passwordHash.js";
 import { error } from "console";
 
-const userDb =
-  "C:/Users/Dell/income-expense/backend-income-expense/models/users.json";
 // const userDb =
-// "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
+// "C:/Users/Dell/income-expense/backend-income-expense/models/users.json";
+const userDb =
+  "/Users/23LP2888/income-expense/backend-income-expense/models/users.json";
 
 export const createByNewUser = async (req, res) => {
   const { username, email, password } = req.body;
@@ -32,8 +32,8 @@ export const createByNewUser = async (req, res) => {
     });
 
     await fs.writeFileSync(
-      // "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
-      "C:/Users/Dell/income-expense/backend-income-expense/models/users.json",
+      "/Users/23LP2888/income-expense/backend-income-expense/models/users.json",
+      // "C:/Users/Dell/income-expense/backend-income-expense/models/users.json",
       JSON.stringify(allUsers)
     );
 
