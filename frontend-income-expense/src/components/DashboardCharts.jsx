@@ -13,8 +13,9 @@ const DashboardCharts = () => {
       </div>
 
       <div className="w-[588px] h-[284px] flex flex-col rounded-[12px] bg-white">
-        <div className="w-[588px] h-14 rounded-md flex items-center pl-6 text-base font-semibold">
-          Income Expense
+        <div className="w-[588px] h-14 rounded-md flex justify-between items-center px-6 ">
+          <p className="text-base font-semibold">Income Expense</p>
+          <p className="text-gray-500 font-normal text-base">Jun 1 - Nov 30</p>
         </div>
         <hr />
         <DoughnutChart />

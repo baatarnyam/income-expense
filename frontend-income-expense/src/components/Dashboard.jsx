@@ -3,20 +3,31 @@ import { PiPlus } from "react-icons/pi";
 import { GoDotFill } from "react-icons/go";
 import DashboardCharts from "./DashboardCharts";
 import LastRecords from "./LastRecords";
+import Link from "next/link";
+import { useContext } from "react";
+import { ThemeChange } from "./Context";
 
 const Dashboard = () => {
+  const { theme, setTheme } = useContext(ThemeChange);
+
+  const handler = () => {
+    setTheme("dark");
+  };
   return (
     <div className="w-screen h-fit flex flex-col items-center bg-slate-100">
       <div className="w-[1440px] h-[72px] flex items-center justify-between bg-white rounded-lg mt-2">
         <div className="w-56 h-10 flex items-center gap-6">
           <Image src="/logo.png" width={40} height={40} />
           <div className="text-base font-semibold">Dashboard</div>
-          <div>Records</div>
+
+          <Link href="/record">Records</Link>
         </div>
         <div className="w-56 h-10 flex items-center gap-6">
           <button className="w-[100px] h-8 bg-blue-600 rounded-2xl flex justify-evenly items-center text-white">
             <PiPlus className="w-6 h-6" />
-            Records
+            <Link href="./record">
+              <div>Records</div>
+            </Link>
           </button>
           <Image src="/dash-profile.png" width={40} height={40} />
         </div>
@@ -62,7 +73,7 @@ const Dashboard = () => {
         </div>
       </div>
       <DashboardCharts />
-      <LastRecords />
+      <LastRecords width="[1200px]" height="456px" />
     </div>
   );
 };

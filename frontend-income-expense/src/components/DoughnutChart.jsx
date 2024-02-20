@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart } from "chart.js/auto";
 import { data } from "autoprefixer";
+import ChartDescription from "./ChartDescription";
 
 const DoughnutChart = () => {
   const chartRef = useRef(null);
@@ -19,7 +20,8 @@ const DoughnutChart = () => {
       data: {
         datasets: [
           {
-            label: "My First Dataset",
+            // label: [Food, Bills, Shopping],
+
             data: [50, 90, 60, 100, 30],
             backgroundColor: [
               "rgba(231, 70, 148, 1)",
@@ -45,7 +47,43 @@ const DoughnutChart = () => {
 
   return (
     <div className="w-full h-[226px] flex items-center justify-center">
-      <canvas ref={chartRef} style={{ width: "156px", height: "156px" }} />
+      <canvas ref={chartRef} width={156} height={156} />
+      <div className="w-[337px] h-[167px] flex flex-col gap-4">
+        <ChartDescription
+          text="Bills"
+          number="5,000,000₮"
+          procied="15.50%"
+          color="#1C64F2"
+        />
+
+        <ChartDescription
+          text="Food"
+          number="5,000,000₮"
+          procied="15.50%"
+          color="#E74694"
+        />
+
+        <ChartDescription
+          text="Shoppping"
+          number="5,000,000₮"
+          procied="15.50%"
+          color="#FDBA8C"
+        />
+
+        <ChartDescription
+          text="Insurance"
+          number="5,000,000₮"
+          procied="15.50%"
+          color="#16BDCA"
+        />
+
+        <ChartDescription
+          text="Clothing"
+          number="5,000,000₮"
+          procied="15.50%"
+          color="#F2901C"
+        />
+      </div>
     </div>
   );
 };
