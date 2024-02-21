@@ -30,6 +30,7 @@ const Currency = () => {
             <option disabled selected>
               MNT-Mongolian Tugrik
             </option>
+            <option>MNT-Mongolian Tugrik</option>
             <option>Han Solo</option>
           </select>
 

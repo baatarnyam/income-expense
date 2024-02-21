@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import Input from "./Input";
+import Link from "next/link";
 
 const Balance = () => {
   return (
@@ -40,7 +41,9 @@ const Balance = () => {
           <div className="text-xs font-normal text-slate-600">
             How much cash do you have in your wallet?
           </div>
-          <Button innerText="Confirm" />
+          <Link href="/finish">
+            <Button innerText="Confirm" />
+          </Link>
         </div>
       </div>
     </div>

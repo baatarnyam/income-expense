@@ -4,18 +4,18 @@ import { GoDotFill } from "react-icons/go";
 import DashboardCharts from "./DashboardCharts";
 import LastRecords from "./LastRecords";
 import Link from "next/link";
-import { useContext } from "react";
-import { ThemeChange } from "./Context";
+// import { useContext } from "react";
+// import { ThemeChange } from "./Context";
 
 const Dashboard = () => {
-  const { theme, setTheme } = useContext(ThemeChange);
+  // const { theme, setTheme } = useContext(ThemeChange);
 
-  const handler = () => {
-    setTheme("dark");
-  };
+  // const handler = () => {
+  //   setTheme("dark");
+  // };
   return (
     <div className="w-screen h-fit flex flex-col items-center bg-slate-100">
-      <div className="w-[1440px] h-[72px] flex items-center justify-between bg-white rounded-lg mt-2">
+      <div className="w-[1440px] h-[72px] flex items-center justify-between bg-white rounded-lg mt-2 px-6">
         <div className="w-56 h-10 flex items-center gap-6">
           <Image src="/logo.png" width={40} height={40} />
           <div className="text-base font-semibold">Dashboard</div>
@@ -34,7 +34,25 @@ const Dashboard = () => {
       </div>
 
       <div className="w-[1200px] h-[216px] flex justify-between mt-8">
-        <Image src="/card.png" width={384} height={216} />
+        <Image
+          src="/card.png"
+          width={384}
+          height={216}
+          className="absolute z-0"
+        />
+        <div className="w-[384px] h-[216px] absolute z-10 mt-5 ml-5">
+          <div className="flex gap-2">
+            <Image src="/geldWhite.png" width={24} height={21} />
+            <div className="text-white text-base font-medium">Geld</div>
+          </div>
+        </div>
+
+        <div className="w-[384px] h-[216px] absolute z-10 mt-32 ml-5">
+          <div className="flex flex-col gap-2">
+            <div className="text-base text-slate-300">Cash</div>
+            <div className="text-white">12,000,000</div>
+          </div>
+        </div>
 
         <div className="w-[384px] h-[216px] rounded-xl overflow-hidden bg-white">
           <div className="w-full h-14 flex gap-2 items-center pl-[24px]">
