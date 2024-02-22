@@ -1,4 +1,5 @@
 import { client } from "../../index.js";
+import { makeHash } from "../../utils/passwordHash.js";
 
 const createUser = async (email, password, age, username) => {
   const useCreateQuery = `
@@ -15,6 +16,11 @@ const createUser = async (email, password, age, username) => {
 
 export const createByNewUser = async (req, res) => {
   const { email, password, age, username } = req.body;
+  // const hashedPassword = makeHash(password);
+
+  // if (!username || !email || !password) {
+  //   throw new Error("Medeelel dutuu bn");
+  // }
 
   try {
     const userId = await createUser(email, password, age, username);
@@ -23,8 +29,8 @@ export const createByNewUser = async (req, res) => {
 
     // return "User created successfully";
   } catch (error) {
-    // throw new Error(error);
-    console.log(error);
+    throw new Error(error);
+    // console.log(error);
   }
 };
 

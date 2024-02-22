@@ -3,10 +3,10 @@ import { useState } from "react";
 import AddRecordIncome from "./AddRecordIncome";
 
 export default function AddRecordExpense() {
-  const [state, setState] = useState(false);
+  const [expenseType, setExpenseType] = useState(true);
 
   const handleClick = () => {
-    setState(state);
+    setExpenseType(expenseType);
   };
 
   return (
