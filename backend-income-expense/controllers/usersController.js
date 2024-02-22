@@ -6,6 +6,8 @@ import { updateByUser } from "../queries/user/updateUser.js";
 import { postRequest } from "../middleWare/login.js";
 import jwt from "jsonwebtoken";
 
+import { client } from "../index.js";
+
 export const getUserByEmailService = async (req, res) => {
   try {
     const user = await getUserByEmail(req);
