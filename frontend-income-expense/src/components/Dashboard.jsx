@@ -34,23 +34,25 @@ const Dashboard = () => {
       </div>
 
       <div className="w-[1200px] h-[216px] flex justify-between mt-8">
-        <Image
-          src="/card.png"
-          width={384}
-          height={216}
-          className="absolute z-0"
-        />
-        <div className="w-[384px] h-[216px] absolute z-10 mt-5 ml-5">
-          <div className="flex gap-2">
-            <Image src="/geldWhite.png" width={24} height={21} />
-            <div className="text-white text-base font-medium">Geld</div>
+        <div className="w-[384px]">
+          <Image
+            src="/card.png"
+            width={384}
+            height={216}
+            className="absolute z-0"
+          />
+          <div className="w-[384px] h-[216px] absolute z-10 mt-5 ml-5">
+            <div className="flex gap-2">
+              <Image src="/geldWhite.png" width={24} height={21} />
+              <div className="text-white text-base font-medium">Geld</div>
+            </div>
           </div>
-        </div>
 
-        <div className="w-[384px] h-[216px] absolute z-10 mt-32 ml-5">
-          <div className="flex flex-col gap-2">
-            <div className="text-base text-slate-300">Cash</div>
-            <div className="text-white">12,000,000</div>
+          <div className="w-[384px] h-[216px] absolute z-10 mt-32 ml-5">
+            <div className="flex flex-col gap-2">
+              <div className="text-base text-slate-300">Cash</div>
+              <div className="text-white">12,000,000</div>
+            </div>
           </div>
         </div>
 

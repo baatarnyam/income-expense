@@ -1,12 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import AddRecordIncome from "./AddRecordIncome";
 
 export default function AddRecordExpense() {
   const [expenseType, setExpenseType] = useState(true);
 
   const handleClick = () => {
-    setExpenseType(expenseType);
+    setExpenseType(!expenseType);
   };
 
   return (
@@ -14,14 +13,23 @@ export default function AddRecordExpense() {
       <div className="w-1/2 h-full flex flex-col justify-between py-5 px-6">
         <div className="w-[347px] h-[40px] flex justify-between bg-gray-100 rounded-[100px]">
           <button
-            className={`w-1/2 h-full rounded-[20px] text-base font-normal bg-blue-600 text-white`}
+            className="w-1/2 h-full rounded-[20px] text-base font-normal"
+            style={{
+              backgroundColor: expenseType ? "#0166FF" : "#F3F4F6",
+              color: expenseType ? "white" : "black",
+            }}
+            onClick={handleClick}
           >
             Expense
           </button>
 
           <button
-            onClick={{ handleClick }}
-            className={`w-1/2 h-full rounded-[20px] text-base font-normal`}
+            className="w-1/2 h-full rounded-[20px] text-base font-normal"
+            style={{
+              backgroundColor: expenseType ? "#F3F4F6" : "#16A34A",
+              color: expenseType ? "black" : "white",
+            }}
+            onClick={handleClick}
           >
             Income
           </button>
@@ -46,6 +54,12 @@ export default function AddRecordExpense() {
               <option>Han Solo</option>
               <option>Greedo</option>
             </select>
+
+            {/* <ul>
+              <li>asd</li>
+              <li>asd</li>
+              <li>asd</li>
+            </ul> */}
           </div>
 
           <div className="w-full h-[72px] flex justify-between">
@@ -78,7 +92,10 @@ export default function AddRecordExpense() {
             </div>
           </div>
 
-          <button className="w-full h-[40px] bg-blue-600 text-white rounded-[20px]">
+          <button
+            className="w-full h-[40px] bg-blue-600 text-white rounded-[20px]"
+            style={{ backgroundColor: expenseType ? "#0166FF" : "#16A34A" }}
+          >
             Add Record
           </button>
         </div>

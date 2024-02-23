@@ -7,10 +7,10 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import RecordLine from "./RecordLine";
 
-// import RecordData from "./RecordData";
 import { ModalContext } from "./AddRecord";
 import { useContext } from "react";
 import Modal from "./Modal";
+import { AmountRange } from "./AmountRange";
 
 function Record() {
   const { record, setRecord } = useContext(ModalContext);
@@ -110,16 +110,20 @@ function Record() {
               </div>
 
               <div className="w-[245px] h-[152px] flex flex-col gap-4">
-                <div className="text-base font-semibold">Amount Range</div>
-                <div className="w-full h-[112px] flex flex-col gap-4">
+                {/* <div className="text-base font-semibold">Amount Range</div> */}
+                {/* <div className="w-full h-[112px] flex flex-col gap-4">
                   <div className="w-[245px] h-[48px] flex gap-4">
-                    <div className="w-[115px] h-[48px] bg-gray-100 rounded-lg flex items-center pl-4">
-                      0
-                    </div>
+                    <input
+                      type="number"
+                      className="w-[115px] h-[48px] bg-gray-100 rounded-lg flex items-center pl-4"
+                      placeholder="0"
+                    ></input>
 
-                    <div className="w-[115px] h-[48px] bg-gray-100 rounded-lg flex items-center pl-4">
-                      1000
-                    </div>
+                    <input
+                      type="number"
+                      className="w-[115px] h-[48px] bg-gray-100 rounded-lg flex items-center pl-4"
+                      placeholder="1000"
+                    ></input>
                   </div>
 
                   <input
@@ -129,7 +133,9 @@ function Record() {
                     value="40"
                     className="range range-xs"
                   />
-                </div>
+                </div> */}
+
+                <AmountRange />
               </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AddRecordExpense from "./AddRecordExpense";
-import AddRecordIncome from "./AddRecordIncome";
 import { IoClose } from "react-icons/io5";
 import { ModalContext } from "./AddRecord";
 import { useContext } from "react";
@@ -23,7 +22,6 @@ export default function Modal() {
         </div>
         <hr />
         <AddRecordExpense />
-        {/* <AddRecordIncome /> */}
       </div>
     </div>
   );

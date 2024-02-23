@@ -8,26 +8,36 @@ const createUser = async (email, password, age, username) => {
   const userId = await client.query(useCreateQuery, [
     username,
     email,
-    password,
+    makeHash(password),
     age,
   ]);
+
   return userId;
 };
+const getUserQuery = async (email) => {
+  const loginUserQuery = `SELECT * FROM users WHERE email = $1`;
+  const user = await client.query(loginUserQuery, [email]);
 
+  return user.rows;
+};
 export const createByNewUser = async (req, res) => {
   const { email, password, age, username } = req.body;
-  // const hashedPassword = makeHash(password);
-
-  // if (!username || !email || !password) {
-  //   throw new Error("Medeelel dutuu bn");
-  // }
 
   try {
+    if (!username || !email || !password) {
+      throw new Error("Medeelel dutuu bn");
+    }
+    const userscheck = await getUserQuery(email);
+    // console.log(userscheck);
+    if (userscheck.length > 0) {
+      throw new Error("User already existed");
+    }
+
     const userId = await createUser(email, password, age, username);
     console.log(userId);
-    res.send(userId);
+    // res.send(userId);
 
-    // return "User created successfully";
+    return "User created successfully";
   } catch (error) {
     throw new Error(error);
     // console.log(error);
