@@ -14,11 +14,18 @@ const CONNECTION_STRING =
 export const client = new pg.Client({
   connectionString: CONNECTION_STRING,
 });
+
 const dbInit = async () => {
   await client.connect();
   await createUserTable();
 };
 dbInit();
+
+client.on("error", async (error, cl) => {
+  if (error) {
+    await client.connect();
+  }
+});
 
 const createUserTable = async () => {
   const userTableCreateQuery = `CREATE TABLE IF NOT EXISTS users( 
@@ -26,7 +33,7 @@ const createUserTable = async () => {
     username TEXT NOT NULL, 
     email TEXT NOT NULL,
     password TEXT NOT NULL,
-    age SMALLINT 
+    age SMALLINT
   )`;
 
   const result = await client.query(userTableCreateQuery);

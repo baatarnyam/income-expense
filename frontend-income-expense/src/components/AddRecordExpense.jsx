@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import ChooseCategory from "./ChooseCategory";
 
 export default function AddRecordExpense() {
   const [expenseType, setExpenseType] = useState(true);
@@ -46,20 +47,15 @@ export default function AddRecordExpense() {
 
           <div className="w-full h-[70px] flex flex-col justify-between">
             <div className="text-base font-normal">Category</div>
+            <ChooseCategory />
 
-            <select className="select select-bordered select-sm w-[342px] h-[30px] bg-gray-50">
+            {/* <select className="select select-bordered select-sm w-[342px] h-[35px] rounded-lg border bg-gray-50">
               <option disabled selected className="text-base font-semibold">
                 Choose
               </option>
               <option>Han Solo</option>
               <option>Greedo</option>
-            </select>
-
-            {/* <ul>
-              <li>asd</li>
-              <li>asd</li>
-              <li>asd</li>
-            </ul> */}
+            </select> */}
           </div>
 
           <div className="w-full h-[72px] flex justify-between">
@@ -68,7 +64,7 @@ export default function AddRecordExpense() {
                 Date
               </div>
 
-              <select className="select select-bordered select-sm w-full bg-gray-50">
+              <select className="select select-bordered select-sm w-full h-[35px] rounded-lg border bg-gray-50">
                 <option disabled selected className="text-base font-semibold">
                   Oct 30, 2023
                 </option>
@@ -82,7 +78,7 @@ export default function AddRecordExpense() {
                 Date
               </div>
 
-              <select className="select select-bordered select-sm w-full bg-gray-50">
+              <select className="select select-bordered select-sm w-full h-[35px] rounded-lg border bg-gray-50">
                 <option disabled selected className="text-base font-semibold">
                   14:00 PM
                 </option>
@@ -105,7 +101,7 @@ export default function AddRecordExpense() {
         <div className="w-full h-[76px] flex flex-col justify-between ">
           <div className="text-base font-normal text-gray-800">Payee</div>
 
-          <select className="select select-bordered select-md w-full bg-gray-50">
+          <select className="select select-bordered w-full h-[40px] rounded-lg border bg-gray-50">
             <option disabled selected className="text-base font-semibold">
               write here
             </option>

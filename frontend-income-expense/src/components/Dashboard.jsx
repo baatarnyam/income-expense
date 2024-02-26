@@ -63,7 +63,7 @@ const Dashboard = () => {
           </div>
           <hr />
           <div className="w-full h-[160px] flex flex-col pl-[24px] py-[20px] justify-between">
-            <div className="text-4xl font-semibold">1200000₮</div>
+            <div className="text-4xl font-semibold">12,000,000₮</div>
             <div className="mb-[20px] text-lg font-normal text-gray-500">
               Your income Amount
             </div>
@@ -81,7 +81,7 @@ const Dashboard = () => {
           </div>
           <hr />
           <div className="w-full h-[160px] flex flex-col pl-[24px] py-[20px] justify-between">
-            <div className="text-4xl font-semibold">-1200000₮</div>
+            <div className="text-4xl font-semibold">-12,000,000₮</div>
             <div className="mb-[20px] text-lg font-normal text-gray-500">
               Your income Amount
             </div>
