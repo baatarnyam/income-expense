@@ -20,12 +20,14 @@ export const AmountRange = () => {
             type="number"
             value={value[0]}
             className="w-[115px] h-[48px] bg-[#F5F5F5] rounded-lg flex justify-between items-center px-[10px] text-lg gap-[24px]"
+            // onChange={handleChange}
           />
 
           <input
             type="number"
             value={value[1]}
             className="w-[115px] h-[48px] bg-[#F5F5F5] rounded-lg flex justify-between items-center px-[10px] text-lg gap-[24px]"
+            // onChange={handleChange}
           />
         </div>
         <div>

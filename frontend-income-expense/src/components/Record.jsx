@@ -6,11 +6,12 @@ import CategoryTips from "./CategoryTips";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import RecordLine from "./RecordLine";
-
 import { ModalContext } from "./AddRecord";
 import { useContext } from "react";
 import Modal from "./Modal";
 import { AmountRange } from "./AmountRange";
+import { AddCategoryModalContext } from "./AddRecord";
+import AddCategoryModal from "./AddCategoryModal";
 
 function Record() {
   const { record, setRecord } = useContext(ModalContext);
@@ -19,12 +20,26 @@ function Record() {
     setRecord(!record);
   };
 
+  const { addCategory, setAddCategory } = useContext(AddCategoryModalContext);
+
+  const handleAddCategory = () => {
+    setAddCategory(!addCategory);
+  };
+
   return (
     <div className=" w-screen h-screen relative">
       <div>
         {record && (
           <div>
             <Modal />
+          </div>
+        )}
+      </div>
+
+      <div>
+        {addCategory && (
+          <div>
+            <AddCategoryModal />
           </div>
         )}
       </div>
@@ -104,37 +119,16 @@ function Record() {
                 <CategoryTips text="Others" />
               </div>
 
-              <div className="w-full h-[32px] flex items-center gap-5 pl-2">
+              <div
+                className="w-full h-[32px] flex items-center gap-5 pl-2 cursor-pointer"
+                type="button"
+                onClick={handleAddCategory}
+              >
                 <PiPlus className="w-6 h-6 text-blue-600" />
                 <div className="text-base font-normal">Add Category</div>
               </div>
 
               <div className="w-[245px] h-[152px] flex flex-col gap-4">
-                {/* <div className="text-base font-semibold">Amount Range</div> */}
-                {/* <div className="w-full h-[112px] flex flex-col gap-4">
-                  <div className="w-[245px] h-[48px] flex gap-4">
-                    <input
-                      type="number"
-                      className="w-[115px] h-[48px] bg-gray-100 rounded-lg flex items-center pl-4"
-                      placeholder="0"
-                    ></input>
-
-                    <input
-                      type="number"
-                      className="w-[115px] h-[48px] bg-gray-100 rounded-lg flex items-center pl-4"
-                      placeholder="1000"
-                    ></input>
-                  </div>
-
-                  <input
-                    type="range"
-                    min={0}
-                    max="100"
-                    value="40"
-                    className="range range-xs"
-                  />
-                </div> */}
-
                 <AmountRange />
               </div>
             </div>

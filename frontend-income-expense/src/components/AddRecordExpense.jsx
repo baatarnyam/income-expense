@@ -48,14 +48,6 @@ export default function AddRecordExpense() {
           <div className="w-full h-[70px] flex flex-col justify-between">
             <div className="text-base font-normal">Category</div>
             <ChooseCategory />
-
-            {/* <select className="select select-bordered select-sm w-[342px] h-[35px] rounded-lg border bg-gray-50">
-              <option disabled selected className="text-base font-semibold">
-                Choose
-              </option>
-              <option>Han Solo</option>
-              <option>Greedo</option>
-            </select> */}
           </div>
 
           <div className="w-full h-[72px] flex justify-between">
