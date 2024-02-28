@@ -15,17 +15,17 @@ export const client = new pg.Client({
   connectionString: CONNECTION_STRING,
 });
 
-const dbInit = async () => {
-  await client.connect();
-  await createUserTable();
-};
-dbInit();
+// const dbInit = async () => {
+//   await client.connect();
+//   await createUserTable();
+// };
+// dbInit();
 
-client.on("error", async (error, cl) => {
-  if (error) {
-    await client.connect();
-  }
-});
+// client.on("error", async (error, cl) => {
+//   if (error) {
+//     await client.connect();
+//   }
+// });
 
 const createUserTable = async () => {
   const userTableCreateQuery = `CREATE TABLE IF NOT EXISTS users( 
@@ -42,6 +42,16 @@ const createUserTable = async () => {
 
 // app.post("/signup", async (req, res) => {
 //   res.send("working");
+// });
+
+// app.post("/getUser", async (req, res) => {
+//   const headers = req.headers.authorization;
+
+//   try {
+//     res.send(user);
+//   } catch (error) {
+//     res.send(error.message);
+//   }
 // });
 
 const port = 8000;

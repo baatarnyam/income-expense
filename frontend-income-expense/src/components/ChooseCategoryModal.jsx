@@ -70,7 +70,7 @@ export default function ChooseCategoryModal() {
             </div>
 
             <IoClose
-              className="w-[18px] h-[18px] cursor-pointer border"
+              className="w-[18px] h-[18px] cursor-pointer"
               onClick={handleModalClose}
             />
           </div>

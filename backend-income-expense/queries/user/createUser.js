@@ -2,6 +2,7 @@ import { client } from "../../index.js";
 import { makeHash } from "../../utils/passwordHash.js";
 
 const createUser = async (email, password, age, username) => {
+  await client.connect();
   const useCreateQuery = `
   INSERT INTO users( username, email, password, age ) VALUES ($1, $2, $3, $4) RETURNING id`;
 
@@ -11,6 +12,7 @@ const createUser = async (email, password, age, username) => {
     makeHash(password),
     age,
   ]);
+  await client.end();
 
   return userId;
 };
