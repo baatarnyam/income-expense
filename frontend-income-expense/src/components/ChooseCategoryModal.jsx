@@ -8,8 +8,12 @@ import { PiForkKnifeFill } from "react-icons/pi";
 import { TbGlassFull } from "react-icons/tb";
 import { PiTaxiFill } from "react-icons/pi";
 import { PiTShirtFill } from "react-icons/pi";
-import { AddCategoryModalContext } from "./AddRecord";
-import { ChooseCategoryModalContext } from "./AddRecord";
+
+// import { AddCategoryModalContext } from "./AddRecord";
+// import { ChooseCategoryModalContext } from "./AddRecord";
+
+import { AddCategoryModalContext } from "./context/AddcategoryContext";
+import { ChooseCategoryModalContext } from "./context/ChooseCategoryContext";
 
 export default function ChooseCategoryModal() {
   const { addCategory, setAddCategory } = useContext(AddCategoryModalContext);

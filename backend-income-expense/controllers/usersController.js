@@ -66,6 +66,6 @@ export const postRequestService = async (req, res) => {
 
     res.send({ ...requestUser, accessToken });
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(501).send(error.message);
   }
 };

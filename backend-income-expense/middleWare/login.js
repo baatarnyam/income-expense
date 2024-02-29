@@ -11,6 +11,7 @@ import { client } from "../index.js";
 // "C:/Users/Dell/income-expense/backend-income-expense/models/users.json";
 
 const getUserQuery = async (email) => {
+  // await client.connect();
   const loginUserQuery = `SELECT * FROM users WHERE email = $1`;
   const user = await client.query(loginUserQuery, [email]);
 
@@ -31,12 +32,12 @@ export const postRequest = async (req, res, next) => {
     }
 
     const checkedHash = compareHash(password, user.password);
-
+    // console.log(checkedHash);
     if (checkedHash) {
       next();
       return;
     } else {
-      res.send("Email or password is wrong");
+      return "Email or password is wrong";
     }
   } catch (error) {
     res.send(error.message);

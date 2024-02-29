@@ -13,7 +13,7 @@ const userRouter = express.Router();
 
 //get
 userRouter.get("/users/:email", getUserByEmailService);
-
+//
 //getAll
 userRouter.get("/users", getAllUsersService);
 
@@ -31,5 +31,7 @@ userRouter.delete("/users/:email", getUserByDeleteService);
 
 //token check
 userRouter.post("/token", tokenCheck);
+
+userRouter.post("/verify", postRequest, postRequestService);
 
 export default userRouter;

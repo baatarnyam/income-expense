@@ -6,7 +6,6 @@ import pg from "pg";
 
 const app = express();
 app.use(express.json());
-// app.use(userRouter);
 
 const CONNECTION_STRING =
   "postgresql://bbaatarnya:WZq3Gsor8Sdj@ep-odd-mode-a1wuowqp.ap-southeast-1.aws.neon.tech/incomeDb?sslmode=require";
@@ -15,11 +14,11 @@ export const client = new pg.Client({
   connectionString: CONNECTION_STRING,
 });
 
-// const dbInit = async () => {
-//   await client.connect();
-//   await createUserTable();
-// };
-// dbInit();
+const dbInit = async () => {
+  await client.connect();
+  await createUserTable();
+};
+dbInit();
 
 // client.on("error", async (error, cl) => {
 //   if (error) {
@@ -44,16 +43,6 @@ const createUserTable = async () => {
 //   res.send("working");
 // });
 
-// app.post("/getUser", async (req, res) => {
-//   const headers = req.headers.authorization;
-
-//   try {
-//     res.send(user);
-//   } catch (error) {
-//     res.send(error.message);
-//   }
-// });
-
 const port = 8000;
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
@@ -61,7 +50,3 @@ app.listen(port, () => {
 app.use(cors());
 
 app.use(userRouter);
-
-// app.listen(port, () => {
-//   console.log(`http://localhost:${port}`);
-// });

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { useContext } from "react";
 import AddCategory from "./AddCategory";
-import { AddCategoryModalContext } from "./AddRecord";
+
+import { AddCategoryModalContext } from "./context/AddcategoryContext";
+// import { AddCategoryModalContext } from "./AddRecord";
 
 export default function AddCategoryModal() {
   const { addCategory, setAddCategory } = useContext(AddCategoryModalContext);
