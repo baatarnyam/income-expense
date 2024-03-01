@@ -10,7 +10,8 @@ import { ModalContext } from "./AddRecord";
 import { useContext } from "react";
 import Modal from "./Modal";
 import { AmountRange } from "./AmountRange";
-import { AddCategoryModalContext } from "./AddRecord";
+
+import { AddCategoryModalContext } from "./context/AddcategoryContext";
 import AddCategoryModal from "./AddCategoryModal";
 
 function Record() {

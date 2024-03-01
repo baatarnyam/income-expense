@@ -1,21 +1,9 @@
-import { getUserByEmail } from "../queries/user/getUser.js";
+import { getUserByLogin } from "../queries/user/getUserByLogin.js";
 import { getAllUsers } from "../queries/user/getUsers.js";
 import { getUserByDelete } from "../queries/user/deleteUser.js";
 import { createByNewUser } from "../queries/user/createUser.js";
 import { updateByUser } from "../queries/user/updateUser.js";
-import { postRequest } from "../middleWare/login.js";
-import jwt from "jsonwebtoken";
-
 import { client } from "../index.js";
-
-export const getUserByEmailService = async (req, res) => {
-  try {
-    const user = await getUserByEmail(req);
-    res.send(JSON.stringify(user));
-  } catch (error) {
-    res.status(500).send(error.message);
-  }
-};
 
 export const getAllUsersService = async (req, res) => {
   try {
@@ -56,16 +44,28 @@ export const updateByUserService = async (req, res) => {
 
 export const postRequestService = async (req, res) => {
   try {
-    const accessToken = jwt.sign(
-      { email: req.body.email },
-      process.env.JWT_SECRET || "defaultSecret",
-      { expiresIn: "1d" }
-    );
+    const requestUser = await getUserByLogin(req, res);
 
-    const requestUser = await getUserByEmail(req);
-
-    res.send({ ...requestUser, accessToken });
+    res.send({ ...requestUser });
   } catch (error) {
     res.status(501).send(error.message);
+  }
+};
+
+export const userLoginCheck = async (req, res) => {
+  try {
+    const header = req.headers.authorization;
+    console.log(header);
+
+    if (!header) {
+      res.status(400).send("Token not Provied");
+    }
+
+    const token = header.split(" ")[1];
+
+    const { email } = jwt.decode(token);
+    res.send(email);
+  } catch (error) {
+    res.status(500).send(error.message);
   }
 };

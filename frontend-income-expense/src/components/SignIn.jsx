@@ -24,30 +24,30 @@ const SignIn = () => {
   const ClickedButton = async (e) => {
     e.preventDefault();
 
-    // try {
-    await axios
-      .post("http://localhost:8000/login", userData)
-      .then((response) => {
-        console.log(response.data);
+    try {
+      await axios
+        .post("http://localhost:8000/login", userData)
+        .then((response) => {
+          console.log(response.data);
 
-        const setItem = () => {
-          localStorage.setItem("loginToken", response.data.accessToken);
-        };
-        setItem();
+          const setItem = () => {
+            localStorage.setItem("loginToken", response.data.accessToken);
+          };
+          setItem();
 
-        if (
-          response.data !== "User not found" &&
-          response.data !== "Email or password is wrong"
-        ) {
-          router.push("/dashboard");
-        } else {
-          setError(response.data);
-        }
-      });
-    // } catch (error) {
-    // alert(error.response.data);
-    // setError(error.response.data);
-    // }
+          if (
+            response.data !== "User not found" &&
+            response.data !== "Email or password is wrong"
+          ) {
+            router.push("/dashboard");
+          } else {
+            setError(response.data);
+          }
+        });
+    } catch (error) {
+      // alert(error.response.data);
+      setError(error.response.data);
+    }
   };
 
   return (

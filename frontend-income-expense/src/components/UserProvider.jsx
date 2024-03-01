@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export const UserContext = createContext();
 
@@ -20,7 +20,7 @@ export default function UserProvider({ children }) {
     const verifyToken = async () => {
       try {
         const result = await axios.post(
-          "http://localhost:8000/verify",
+          "http://localhost:8000/token",
           {},
           {
             headers: {
@@ -30,7 +30,6 @@ export default function UserProvider({ children }) {
           }
         );
         setUserEmail(result?.data);
-        router.push("/");
       } catch (error) {
         localStorage.removeItem("loginToken");
         router.push("/login");

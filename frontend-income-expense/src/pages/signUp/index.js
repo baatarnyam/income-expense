@@ -4,12 +4,12 @@ import { UserContext } from "@/components/UserProvider";
 import { useRouter } from "next/navigation";
 
 const signUp = () => {
-  // const { userEmail } = useContext(UserContext);
-  // const router = useRouter();
+  const { userEmail } = useContext(UserContext);
+  const router = useRouter();
 
-  // if (userEmail) {
-  //   router.push("/");
-  // }
+  if (userEmail) {
+    router.push("/dashboard");
+  }
 
   return (
     <div>
