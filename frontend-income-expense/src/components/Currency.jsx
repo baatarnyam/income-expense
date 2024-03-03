@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Button from "./Button";
-import Link from "next/link";
-const Currency = () => {
+import Steps from "./Steps";
+
+const Currency = (props) => {
+  const { stage = 1, nextHandle } = props;
   return (
-    <div className="w-screen h-screen flex flex-col items-center pt-10">
+    <div
+      className="w-screen h-screen flex flex-col items-center pt-10"
+      style={{ display: `${stage === 1 ? "flex" : "none"}` }}
+    >
       <div className="w-96 h-1/2 flex flex-col items-center justify-between">
         <div className="w-full h-fit flex flex-col items-center gap-20">
           <div className="w-fit h-fit flex items-center gap-3">
@@ -38,9 +43,13 @@ const Currency = () => {
             Your base currency should be the one you use most often. All
             transaction in other currencies will be calculated based on this one{" "}
           </div>
-          <Link href={`/balance`}>
-            <Button innerText="Confirm" />
-          </Link>
+          {/* <Button innerText="Confirm" clickedbutton={nextHandle} /> */}
+          <button
+            className="w-96 h-12 bg-blue-600 rounded-2xl text-white text-xl"
+            onClick={nextHandle}
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>

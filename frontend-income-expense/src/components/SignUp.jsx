@@ -3,11 +3,14 @@ import Input from "./Input";
 import Button from "./Button";
 import { useState } from "react";
 import Link from "next/link";
+import Steps from "./Steps";
 
 import axios from "axios";
 import { useRouter } from "next/router";
 
-const SignUp = () => {
+const SignUp = (props) => {
+  const { stage = 0, nextHandle } = props;
+
   const [userData, setUserData] = useState({});
   const [error, setError] = useState("");
   const router = useRouter();
@@ -35,7 +38,8 @@ const SignUp = () => {
           // console.log(response.data);
 
           if (response.data !== "User already existed") {
-            router.push("/loading");
+            // router.push("/loading");
+            nextHandle();
           }
         });
     } catch (error) {
@@ -44,7 +48,10 @@ const SignUp = () => {
   };
 
   return (
-    <div className="w-screen h-screen flex ">
+    <div
+      className="w-screen h-screen flex"
+      style={{ display: `${stage === 0 ? "flex" : "none"}` }}
+    >
       <div className="w-1/2 h-full flex items-center justify-center">
         <div className="w-96 h-fit flex flex-col items-center gap-[15px]">
           <div className="w-24 h-9 flex items-center justify-around">

@@ -2,10 +2,15 @@ import Image from "next/image";
 import Button from "./Button";
 import Input from "./Input";
 import Link from "next/link";
+import Steps from "./Steps";
 
-const Balance = () => {
+const Balance = (props) => {
+  const { stage = 2, nextHandle } = props;
   return (
-    <div className="w-screen h-screen flex flex-col items-center pt-10">
+    <div
+      className="w-screen h-screen flex flex-col items-center pt-10"
+      style={{ display: `${stage === 2 ? "flex" : "none"}` }}
+    >
       <div className="w-96 h-1/2 flex flex-col items-center justify-between ">
         <div className="w-full h-fit flex flex-col items-center gap-20">
           <div className="w-fit h-fit flex items-center gap-3">
@@ -41,9 +46,14 @@ const Balance = () => {
           <div className="text-xs font-normal text-slate-600">
             How much cash do you have in your wallet?
           </div>
-          <Link href="/finish">
-            <Button innerText="Confirm" />
-          </Link>
+
+          {/* <Button innerText="Confirm" clickedButton={nextHandle} /> */}
+          <button
+            className="w-96 h-12 bg-blue-600 rounded-2xl text-white text-xl"
+            onClick={nextHandle}
+          >
+            Confirm
+          </button>
         </div>
       </div>
     </div>
