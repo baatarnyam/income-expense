@@ -56,13 +56,10 @@ export default function AddRecordExpense() {
                 Date
               </div>
 
-              <select className="select select-bordered select-sm w-full h-[35px] rounded-lg border bg-gray-50">
-                <option disabled selected className="text-base font-semibold">
-                  Oct 30, 2023
-                </option>
-                <option>Sep 30, 2023</option>
-                <option>Aug 30, 2023</option>
-              </select>
+              <input
+                className="w-full h-[35px] rounded-lg border bg-gray-50"
+                type="date"
+              />
             </div>
 
             <div className="w-[168px] h-full flex flex-col justify-between">
@@ -70,13 +67,10 @@ export default function AddRecordExpense() {
                 Date
               </div>
 
-              <select className="select select-bordered select-sm w-full h-[35px] rounded-lg border bg-gray-50">
-                <option disabled selected className="text-base font-semibold">
-                  14:00 PM
-                </option>
-                <option>14:15 PM</option>
-                <option>14:20 PM</option>
-              </select>
+              <input
+                className="w-full h-[35px] rounded-lg border bg-gray-50"
+                type="time"
+              />
             </div>
           </div>
 
